@@ -22,7 +22,6 @@ app.get("/:otp", (req, res) => {
     res.send("otp failed");
   }
 });
-
 app.post("/", (req, res) => {
   const mailOptions = {
     from: "yashvivastarpara@gmail.com",
@@ -30,7 +29,6 @@ app.post("/", (req, res) => {
     subject: req.body.subject,
     html: `<h1>${Otp}</h1>`,
   };
-
   transporter.sendMail(mailOptions, (err, info) => {
     if (err) {
       console.log(err);
